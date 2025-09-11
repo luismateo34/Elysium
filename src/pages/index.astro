@@ -1,11 +1,48 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import "../styles/globals.css";
+import Animation from "@src/components/animation.astro";
+import TitleIndex from "@src/components/indexPage/titleIndex.astro";
+import SplashCursor from "@src/components/SplashCursor/SplashCursor";
+import Sectiontwo from "@src/components/indexPage/section2.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <SplashCursor client:only="react" />
+  <div class="fixed top-0 left-0 w-full h-full -z-10 bg-black">
+    <Animation />
+  </div>
+  <div class="w-full h-full overflow-x-hidden overflow-y-visible z-0">
+    <!--section title -->
+    <section
+      class="w-screen h-screen grid grid-cols-3 grid-rows-3 overflow-x-hidden"
+    >
+      <TitleIndex className="col-start-1 col-end-4  row-start-2 row-end-3 " />
+      <h4 class="row-start-3 row-end-4 col-start-2 col-end-3 w-full flex flex-row justify-center items-center">
+        desarrollo, testing, refactorización
+      </h4>
+    </section>
+    <Sectiontwo />
+  </div>
 </Layout>
+<style>
+  h4 {
+    -webkit-text-stroke: 1px white;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    animation: fadeIn 8s ease-in;
+    animation-delay: 0s;
+  }
+</style>

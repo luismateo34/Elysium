@@ -1,0 +1,78 @@
+---
+interface Props{
+className: string,
+}
+const { className } = Astro.props
+---
+<div class:list={["relative flex flex-row justify-center items-center w-full h-full", className]}>
+  <h1 class="text-7xl font-black shadow-lg shadow-indigo-500/50 z-20">
+    ELYSIUM_TECHNOLOGIES
+  </h1>
+  <h3
+    class="h3-top inline-flex text-transparent m-auto text-7xl font-black absolute top-0"
+  >
+    ELYSIUM_TECHNOLOGIES
+  </h3>
+  <h3
+    class="h3-bottom inline-flex text-transparent m-auto text-7xl font-black absolute bottom-0"
+  >
+    ELYSIUM_TECHNOLOGIES
+  </h3>
+
+  <h2 class="fadeIn flex text-5xl text-amber-100 z-0 absolute bottom-0">
+    SOFTWARE DEVELOPER
+  </h2>
+</div>
+
+<style>
+    h3 {
+    -webkit-text-stroke: 1px white;
+  }
+  h1,
+  h2 {
+    -webkit-text-stroke: 1px blueviolet;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    animation: fadeIn 8s ease-in;
+    animation-delay: 0s;
+  }
+</style>
+<script>
+  import { animate, text, stagger } from "animejs";
+
+  const { chars } = text.split(".h3-top", {
+    chars: { wrap: "clip" },
+  });
+
+  animate(chars, {
+    y: [{ to: ["-100%", "0%"] }, { to: "100%", delay: 2400, ease: "in(3)" }],
+    duration: 950,
+    ease: "out(3)",
+    delay: stagger(100),
+    //loop: true,
+  });
+  //--------------------------------------
+  const bottom = text.split(".h3-bottom", {
+    chars: { wrap: "clip" },
+  });
+
+  animate(bottom.chars, {
+    y: [{ to: ["100%", "0%"] }, { to: "-100%", delay: 2400, ease: "in(3)" }],
+    duration: 950,
+    ease: "out(3)",
+    delay: stagger(100),
+    //loop: true,
+  });
+</script>
