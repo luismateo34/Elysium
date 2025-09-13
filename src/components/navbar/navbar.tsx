@@ -14,14 +14,14 @@ const arrItems: Items[] = [
     ],
   },
   {
-    titleItem: "/about",
+    titleItem: "about",
     arrAnchor: [
       { path: "/about", text: "about" },
-      { path: "/#projects", text: "projects" },
+      { path: "/about/#projects", text: "projects" },
     ],
   },
   {
-    titleItem: "/contact",
+    titleItem: "contact",
     arrAnchor: [{ path: "/contact", text: "contact" }],
   },
 ];
@@ -40,4 +40,4 @@ export function MenuNavBar({ className }: { className: string }) {
       </NavigationMenuList>
     </NavigationMenu>
   );
-};
+}

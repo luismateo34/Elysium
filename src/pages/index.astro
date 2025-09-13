@@ -1,32 +1,32 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import "../styles/globals.css";
-import Animation from "@src/components/animation.astro";
 import TitleIndex from "@src/components/indexPage/titleIndex.astro";
-import SplashCursor from "@src/components/SplashCursor/SplashCursor";
 import Sectiontwo from "@src/components/indexPage/section2.astro";
 ---
 
 <Layout>
-  <SplashCursor client:only="react" />
-  <div class="fixed top-0 left-0 w-full h-full -z-10 bg-black">
-    <Animation />
-  </div>
-  <div class="w-full h-full overflow-x-hidden overflow-y-visible z-0">
-    <!--section title -->
+   <div class="w-full h-full overflow-x-hidden overflow-y-visible z-0">
     <section
-      class="w-screen h-screen grid grid-cols-3 grid-rows-3 overflow-x-hidden"
+      class="w-screen h-screen grid grid-cols-3 grid-rows-2 md:grid-rows-3 overflow-x-hidden"
     >
-      <TitleIndex className="col-start-1 col-end-4  row-start-2 row-end-3 " />
-      <h4 class="row-start-3 row-end-4 col-start-2 col-end-3 w-full flex flex-row justify-center items-center">
-        desarrollo, testing, refactorización
-      </h4>
+      <TitleIndex
+        className="col-start-1 col-end-4 row-start-1 row-end-2 place-self-end  md:place-self-center  md:row-start-2 md:row-end-3"
+      />
+      <div
+        class:list={[
+          "row-start-2 row-end-3  md:row-start-3 md:row-end-4",
+          "col-start-1 col-end-4",
+          "flex flex-row justify-center items-center",
+        ]}
+      >
+        <h4 class="flex">desarrollo, testing, refactorización</h4>
+      </div>
     </section>
     <Sectiontwo />
   </div>
 </Layout>
 <style>
-  h4 {
+   h4 {
     -webkit-text-stroke: 1px white;
   }
   @keyframes fadeIn {

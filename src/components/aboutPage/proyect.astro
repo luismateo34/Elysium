@@ -1,0 +1,134 @@
+---
+import porfolio from "@src/assets/porfolio1.png";
+import next1 from "@src/assets/nextjs/nextjs-page.png";
+import next2 from "@src/assets/nextjs/nextjs-page2.png";
+import next3 from "@src/assets/nextjs/nextjs-page3.png";
+import next4 from "@src/assets/nextjs/nextjs-page-4.png";
+import nvim from "@src/assets/nvimcode.png";
+---
+
+<div
+  class:list={[
+    "w-full h-9/12",
+    " grid grid-cols-2 grid-rows-3",
+    "justify-items-center content-center",
+    " md:grid-cols-3 md:grid-rows-2",
+  ]}
+>
+  <!--1-->
+  <div
+    class:list={["container col-start-1 col-end-2", " row-start-1 row-end-2"]}
+  >
+    <img id="porfolio" src={porfolio.src} alt="porfolio personal" />
+  </div>
+  <!---2---->
+  <div
+    class:list={["container col-start-2 col-end-3", " row-start-1 row-end-2"]}
+  >
+    <img id="nextjs" src={next1.src} alt="nextjs page 1" />
+  </div>
+  <!---3---->
+  <div
+    class:list={[
+      " container col-start-1 col-end-2 row-start-2 row-end-3 ",
+      " md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-2",
+    ]}
+  >
+    <img id="nvim" src={nvim.src} alt="nvim image" />
+  </div>
+  <!---4---->
+  <div
+    class:list={[
+      "container col-start-2 col-end-3",
+      " md:col-start-1 md:col-end-2 row-start-2 row-end-3",
+    ]}
+  >
+    <img id="nextjs4" src={next4.src} alt="nextjs image number 4  " />
+  </div>
+  <!-----5----->
+  <div
+    class:list={[
+      "container row-start-3 row-end-4",
+      "md:row-start-2 md:row-end-3",
+      " col-start-1 col-end-2 md:col-start-2 md:col-end-3",
+    ]}
+  >
+    <img id="nextjs2" src={next2.src} alt="nextjs image 2" />
+  </div>
+  <!---6---->
+  <div
+    class:list={[
+      "container row-start-3 row-end-4",
+      "md:row-start-2 md:row-end-3",
+      "col-start-2 col-end-3 ",
+      "md:col-start-3 md:col-end-4",
+    ]}
+  >
+    <img id="nextjs3" src={next3.src} alt="nextjs image 3" />
+  </div>
+</div>
+<style>
+  .container {
+    width: 90%;
+    height: 90%;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .container:hover {
+    transform: scale(1.05);
+    box-shadow: 11px 10px 16px 0px rgba(37, 211, 179, 0.66);
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+  }
+  img {
+    object-fit: fill;
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<script>
+  const github = import.meta.env.PUBLIC_GITHUB_URL;
+  const porfolio = import.meta.env.PUBLIC_PORFOLIO_URL;
+  const nextjs = import.meta.env.PUBLIC_NEXT_JS_URL;
+  const changePage = (path: string): void => {
+    window.open(path);
+    console.log(path);
+  };
+  //-----------------
+  const nvim = document.getElementById("nvim");
+  nvim?.addEventListener("click", () => {
+    changePage(github);
+  });
+  //--------------
+  const porfolioId = document.getElementById("porfolio");
+  porfolioId?.addEventListener("click", () => {
+    changePage(porfolio);
+  });
+  //----------------------------
+  const nextj1 = document.getElementById("nextjs");
+  const nextj2 = document.getElementById("nextjs2");
+  const nextj3 = document.getElementById("nextjs3");
+  const nextj4 = document.getElementById("nextjs4");
+  //----------------------------
+  nextj1?.addEventListener("click", () => {
+    changePage(nextjs);
+  });
+  nextj2?.addEventListener("click", () => {
+    changePage(nextjs);
+  });
+  nextj3?.addEventListener("click", () => {
+    changePage(nextjs);
+  });
+  nextj4?.addEventListener("click", () => {
+    changePage(nextjs);
+  });
+  //----------------------------
+</script>

@@ -14,7 +14,7 @@ export interface ImageObj {
 export const ObjDormitorio: ImageObj = {
   src: dormitoro.src,
   title: "comodidad",
-  text: "example",
+  text: "testing, documentación para facilitar el desarrollo y mantenimiento de proyectos a lo largo del ciclo de vida del producto",
   id: crypto.randomUUID(),
   description: "imagen de dormitorio",
 };
@@ -22,7 +22,7 @@ export const ObjDormitorio: ImageObj = {
 export const ObjTerminal: ImageObj = {
   src: terminal.src,
   title: "seguridad",
-  text: "example",
+  text: "buenas practicas y estandares para evitar el hackeos y filtraciones de informacion",
   id: crypto.randomUUID(),
   description: "imagen de terminal",
 };
@@ -30,7 +30,7 @@ export const ObjTerminal: ImageObj = {
 export const ObjDBackend: ImageObj = {
   src: backend.src,
   title: "banguardia tecnologica",
-  text: "example",
+  text: "tecnologia de punta para desarrollar soluciones optimas",
   id: crypto.randomUUID(),
   description: "imagen de backend",
 };
@@ -38,7 +38,7 @@ export const ObjDBackend: ImageObj = {
 export const ObjMujer: ImageObj = {
   src: mujer.src,
   title: "experiencia de usuario",
-  text: "example",
+  text: "tecnologias frontend que facilitan crear interfaces de usuario intuitivas y atractivas",
   id: crypto.randomUUID(),
-  description:"imagen de mujer",
+  description: "imagen de mujer",
 };
