@@ -1,20 +1,60 @@
-<article>
-  <h2>Nuestros servicios</h2>
-  <p>
-    Somos un agencia de desarrollo de software que se centra en la creación de
-    aplicaciones web,<br />
-    aplicaciones moviles, manteniento y testeo de software para empresas y otras
-    consultoras.<br />
-    Nos enfocamos principalmente en typescript usando expo, nextjs y nestjs, aunque
-    tambien podemos usar<br />
-    python con fastapi o golang si el producto lo demanda.
-  </p>
-  <h3>servicios de mantenimiento</h3>
-  <p>
-    Con el fin de ayudar a la industria a crear productos de calidad brindamos
-    servicios de testing, documentación <br />
-    y refactorización a programadores, agencias de desarrollo y empresas que desen
-    dar mantenimiento a sus productos <br />
-    pero que no cuente con el tiempo o el personal para dicha tarea
-  </p>
-</article>
+---
+import { ComponentCardSwap } from "./componentcardSwap";
+---
+
+<section>
+  <article
+    class:list={[
+      "w-screen min-w-screen min-h-screen h-screen",
+      "grid grid-cols-1 grid-rows-2",
+      "md:grid-cols-2",
+    ]}
+  >
+  <div class:list={["col-start-1 col-end-2", "row-start-1 row-end-2", "flex flex-col gap-3 pt-16 pl-1 md:pl-3"]}>
+    <h2 class:list={["text-3xl md:text-5xl","text-cyan-500"]}>Nosotros</h2>
+    <p class:list={["text-amber-300"]}>
+        Somos un agencia de desarrollo de software que se centra en la creación
+        de aplicaciones web,<br />
+        aplicaciones moviles, manteniento y testeo de software para empresas y otras
+        consultoras.<br />
+        Nos enfocamos principalmente en typescript usando expo, nextjs y nestjs,
+        aunque tambien podemos usar<br />
+        python con fastapi o golang si el producto lo demanda.
+      </p>
+    </div>
+    <div class:list={["col-start-1 col-end-2", "row-start-2 row-end-3", "flex flex-col gap-3 pl-1 md:pl-3"]}>
+      <h3 class:list={["text-xl md:text-3xl", "text-cyan-500"]}>servicios de mantenimiento</h3>
+      <p class:list={["text-amber-300"]}>
+        Con el fin de ayudar a la industria a crear productos de calidad
+        brindamos servicios de testing, documentación <br />
+        y refactorización a programadores, agencias de desarrollo y empresas que
+        desen dar mantenimiento a sus productos <br />
+        pero que no cuente con el tiempo o el personal para dicha tarea
+      </p>
+    </div>
+  </article>
+  <ComponentCardSwap className="swap" client:only="react" />
+</section>
+
+<style>
+  section {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+    grid-template-areas: "article";
+    justify-items: stretch;
+    align-items: stretch;
+    overflow: hidden;
+  }
+  article {
+    grid-area: "article";
+    z-index: 30;
+    gap: 1.5rem;
+  }
+  .swap {
+    grid-area: "article";
+    z-index: 10;
+  }
+</style>

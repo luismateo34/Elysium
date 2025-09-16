@@ -1,0 +1,118 @@
+---
+import Ulist from "./Ulist.astro";
+import type { ObjectNav } from "./item.d";
+interface Props {
+  Param: ObjectNav;
+}
+const { Param } = Astro.props;
+---
+
+<!--home------>
+<details id="home">
+  <summary id="s_home">home</summary>
+  <div id="paramhome" class="container">
+    <Ulist itemType={Param.home} />
+  </div>
+</details>
+<!--about------>
+<details id="about">
+  <summary id="s_about">about</summary>
+  <div id="paramabout" class="container">
+    <Ulist itemType={Param.about} />
+  </div>
+</details>
+<!---contact---->
+<details id="contact">
+  <summary id="s_contact">contact</summary>
+  <div id="paramcontact" class="container">
+    <Ulist itemType={Param.contact} />
+  </div>
+</details>
+<style>
+  details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    width: 20%;
+    padding-bottom: 0.5rem;
+    /* From https://css.glass */
+    background: rgba(38, 83, 121, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(201, 61, 136, 0.3);
+    &:hover {
+      background-color: rgba(230, 185, 99, 0.2);
+    }
+    &:active{
+      background-color: rgba(246, 92, 78, 0.4) ;
+    }
+  }
+  summary {
+    width: 100%;
+    align-self: center;
+    margin-top: 0.5rem;
+    /*------ */
+    color: rgba(246, 7, 133, 1);
+    &:hover{
+      color: rgba(224, 163, 2, 1);
+    }
+    /*------ */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+  }
+  .container {
+    display: flex;
+    justify-self: end;
+    position: relative;
+  }
+</style>
+<!---------->
+<script>
+  import { SetCss, MouseLeave, ClicKaction } from "./utils";
+  //-----------------------
+  const home = document.getElementById("home") as HTMLDetailsElement;
+  const s_home = document.getElementById("s_home") as HTMLDetailsElement;
+  //-----------------------------
+  const about = document.getElementById("about") as HTMLDetailsElement;
+  const s_about = document.getElementById("s_about") as HTMLDetailsElement;
+  //-----------------------------
+  const contact = document.getElementById("contact") as HTMLDetailsElement;
+  const s_contact = document.getElementById("s_contact") as HTMLDetailsElement;
+
+  //--------about----------------------------------------------
+  SetCss("#paramabout");
+  /*click*/
+  s_about?.addEventListener("click", () => {
+    ClicKaction("#paramabout");
+  });
+  /*mouseleave*/
+  about?.addEventListener("mouseleave", () => {
+    MouseLeave("#paramabout", about);
+  });
+  //-----home------------------------------------------------
+  SetCss("#paramhome");
+  /*mouseleave*/
+  home?.addEventListener("mouseleave", () => {
+    MouseLeave("#paramhome", home);
+  });
+  /*click*/
+  s_home?.addEventListener("click", () => {
+    ClicKaction("#paramhome");
+  });
+
+  //-----contact-----------------------------------------------
+  SetCss("#paramcontact");
+  /*mouseleave*/
+  contact?.addEventListener("mouseleave", () => {
+    MouseLeave("paramcontact", contact);
+  });
+  /*click*/
+  s_contact?.addEventListener("click", () => {
+    ClicKaction("#paramcontact");
+  });
+</script>

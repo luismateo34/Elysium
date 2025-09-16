@@ -1,13 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Proyect from "@src/components/aboutPage/proyect.astro"
+import Proyect from "@src/components/aboutPage/proyect.astro";
+import Principal from "@src/components/aboutPage/aboutcomponent.astro";
 ---
 
 <Layout>
+  <div class="w-full h-full overflow-x-hidden overflow-y-visible z-0">
+    <Principal />
     <section
-      id="about"
-      class="w-screen h-screen flex flex-col justify-center items-center  "
+      id="proyect"
+      class="w-screen h-full flex flex-col justify-center items-center"
     >
-    <Proyect/>
+      <Proyect />
     </section>
+  </div>
 </Layout>

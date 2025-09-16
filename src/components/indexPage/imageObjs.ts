@@ -22,7 +22,7 @@ export const ObjDormitorio: ImageObj = {
 export const ObjTerminal: ImageObj = {
   src: terminal.src,
   title: "seguridad",
-  text: "buenas practicas y estandares para evitar el hackeos y filtraciones de informacion",
+  text: "buenas practicas y estandares para evitar  hackeos y filtraciones de informacion",
   id: crypto.randomUUID(),
   description: "imagen de terminal",
 };

@@ -1,8 +1,8 @@
 ---
 import "../styles/globals.css";
-import Navigation from "@src/components/navbar/navigation.astro";
 import Animation from "@src/components/animation.astro";
 import SplashCursor from "@src/components/SplashCursor/SplashCursor";
+import Navbar from "@src/components/navbar/navbar.astro";
 ---
 
 <!doctype html>
@@ -19,7 +19,7 @@ import SplashCursor from "@src/components/SplashCursor/SplashCursor";
     <div class="fixed top-0 left-0 w-full h-full -z-10 bg-black">
       <Animation />
     </div>
-    <Navigation />
+    <Navbar/>
     <slot />
   </body>
 </html>

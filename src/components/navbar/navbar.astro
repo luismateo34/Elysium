@@ -1,0 +1,38 @@
+---
+import DetailsList from "./details.astro";
+import { LogoIcon } from "./logo";
+import { type ObjectNav } from "./item.d";
+const NavObject: ObjectNav = {
+  home: [
+    { name: "home", path: "/" },
+    { name: "tecnologies", path: "/#tecnologies" },
+  ],
+  about: [
+    { name: "/about", path: "/about" },
+    { name: "/proyect", path: "/about/#proyect" },
+  ],
+  contact: [{ name: "contact", path: "/contact" }],
+};
+---
+
+<div class:list={["w-full h-11 z-40", "absolute top-0"]}>
+  <div
+    class:list={[
+      "fixer top-0 w-full h-10 z-40",
+      "grid grid-cols-1 justify-items-center content-center",
+      "md:grid-cols-2",
+    ]}
+  >
+  <LogoIcon/>
+    <nav
+      class:list={[
+        "w-full h-full ",
+        "flex flex-row justify-around gap-2",
+        "col-start-1 col-end-2",
+        "md:col-start-2 md:col-end-3",
+      ]}
+    >
+      <DetailsList Param={NavObject} />
+    </nav>
+  </div>
+</div>

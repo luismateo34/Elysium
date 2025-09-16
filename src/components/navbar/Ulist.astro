@@ -1,0 +1,41 @@
+---
+import type { ItemType } from "./item.d";
+interface Props {
+  itemType: ItemType[];
+}
+const { itemType } = Astro.props;
+---
+
+<ul >
+  {
+    itemType.map((el) => {
+      return (
+      <li class:list={["flex flex-row justify-center items-center", " w-full h-9"]}>
+	<a href={el.path} class:list={["text-pink-600 hover:text-cyan-500"]} >{el.name}</a>
+        </li>
+      );
+    })
+  }
+</ul>
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    position: absolute;
+    margin-top: 0.75rem;
+    /*------*/
+    gap: 1rem;
+    width: 100%;
+    min-height: 4rem;
+    justify-content: space-around;
+    align-items: center;
+    /*----*/
+    background: rgba(168, 126, 126, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(168, 126, 126, 0.3);
+  }
+</style>
