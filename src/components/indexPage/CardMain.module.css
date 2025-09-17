@@ -43,7 +43,7 @@
 .viewcontainer {
   min-width: 100%;
   width: 100%;
-  height: calc(100%-3rem);
+  height: calc(100% - 3rem);
   min-height: 60vh;
   gap: 1rem;
   border-style: solid;

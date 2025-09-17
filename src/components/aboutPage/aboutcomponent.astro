@@ -11,10 +11,10 @@ import { ComponentCardSwap } from "./componentcardSwap";
     ]}
   >
   <div class:list={["col-start-1 col-end-2", "row-start-1 row-end-2", "flex flex-col gap-3 pt-16 pl-1 md:pl-3"]}>
-    <h2 class:list={["text-3xl md:text-5xl","text-cyan-500"]}>Nosotros</h2>
+    <h2 class:list={["text-3xl md:text-5xl","text-cyan-500"]}>Productos</h2>
     <p class:list={["text-amber-300"]}>
         Somos un agencia de desarrollo de software que se centra en la creación
-        de aplicaciones web,<br />
+        de aplicaciones web,
         aplicaciones moviles, manteniento y testeo de software para empresas y otras
         consultoras.<br />
         Nos enfocamos principalmente en typescript usando expo, nextjs y nestjs,
@@ -45,16 +45,17 @@ import { ComponentCardSwap } from "./componentcardSwap";
     grid-template-rows: repeat(1, minmax(0, 1fr));
     grid-template-areas: "article";
     justify-items: stretch;
-    align-items: stretch;
     overflow: hidden;
+    align-items: stretch;
+    z-index: 0;
   }
   article {
-    grid-area: "article";
+    grid-area: article;
     z-index: 30;
     gap: 1.5rem;
   }
   .swap {
-    grid-area: "article";
+    grid-area: article;
     z-index: 10;
   }
 </style>

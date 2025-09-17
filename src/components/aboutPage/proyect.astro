@@ -5,58 +5,80 @@ import next2 from "@src/assets/nextjs/nextjs-page2.png";
 import next3 from "@src/assets/nextjs/nextjs-page3.png";
 import next4 from "@src/assets/nextjs/nextjs-page-4.png";
 import nvim from "@src/assets/nvimcode.png";
+import "./proyects.css";
 ---
 
 <div
   class:list={[
-    "w-full h-9/12",
-    " grid grid-cols-2 grid-rows-3",
+    "w-full h-8/12",
+    "grid grid-cols-2 grid-rows-3",
     "justify-items-center content-center",
     " md:grid-cols-3 md:grid-rows-2",
   ]}
 >
   <!--1-->
   <div
+    id="c1"
     class:list={["container col-start-1 col-end-2", " row-start-1 row-end-2"]}
   >
-    <img id="porfolio" src={porfolio.src} alt="porfolio personal" />
+    <img src={porfolio.src} alt="porfolio personal" />
+    <div class:list={["buttonContainer"]}>
+      <button id="porfolio">click</button>
+    </div>
   </div>
   <!---2---->
   <div
+    id="c2"
     class:list={["container col-start-2 col-end-3", " row-start-1 row-end-2"]}
   >
-    <img id="nextjs" src={next1.src} alt="nextjs page 1" />
+    <img src={next1.src} alt="nextjs page 1" />
+    <div class:list={["buttonContainer"]}>
+      <button id="nextjs">click</button>
+    </div>
   </div>
   <!---3---->
   <div
+    id="c3"
     class:list={[
       " container col-start-1 col-end-2 row-start-2 row-end-3 ",
       " md:col-start-3 md:col-end-4 md:row-start-1 md:row-end-2",
     ]}
   >
-    <img id="nvim" src={nvim.src} alt="nvim image" />
+    |<img src={nvim.src} alt="nvim image" />
+    <div class:list={["buttonContainer"]}>
+      <button id="nvim">click</button>
+    </div>
   </div>
   <!---4---->
   <div
+    id="c4"
     class:list={[
       "container col-start-2 col-end-3",
       " md:col-start-1 md:col-end-2 row-start-2 row-end-3",
     ]}
   >
-    <img id="nextjs4" src={next4.src} alt="nextjs image number 4  " />
+    <img src={next4.src} alt="nextjs image number 4  " />
+    <div class:list={["buttonContainer"]}>
+      <button id="nextjs4">click</button>
+    </div>
   </div>
   <!-----5----->
   <div
+    id="c5"
     class:list={[
       "container row-start-3 row-end-4",
       "md:row-start-2 md:row-end-3",
       " col-start-1 col-end-2 md:col-start-2 md:col-end-3",
     ]}
   >
-    <img id="nextjs2" src={next2.src} alt="nextjs image 2" />
+    <img src={next2.src} alt="nextjs image 2" />
+    <div class:list={["buttonContainer"]}>
+      <button id="nextjs2">click</button>
+    </div>
   </div>
   <!---6---->
   <div
+    id="c6"
     class:list={[
       "container row-start-3 row-end-4",
       "md:row-start-2 md:row-end-3",
@@ -64,37 +86,126 @@ import nvim from "@src/assets/nvimcode.png";
       "md:col-start-3 md:col-end-4",
     ]}
   >
-    <img id="nextjs3" src={next3.src} alt="nextjs image 3" />
+
+    <img src={next3.src} alt="nextjs image 3" />
+    <div class:list={["buttonContainer"]}>
+      <button id="nextjs3">click</button>
+    </div>
   </div>
 </div>
 <style>
-  .container {
-    width: 90%;
-    height: 90%;
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    grid-template-rows: repeat(1, minmax(0, 1fr));
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  .container:hover {
-    transform: scale(1.05);
-    box-shadow: 11px 10px 16px 0px rgba(37, 211, 179, 0.66);
-    border-style: solid;
-    border-color: white;
-    border-width: 2px;
-  }
   img {
     object-fit: fill;
-    grid-row: 1;
-    grid-column: 1;
     width: 100%;
     height: 100%;
+    grid-area: imagen;
+  }
+    button {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center ;
+    align-items: center;
+    width: 5rem;
+    height: 2.5rem;
+    color: rgba(240, 149, 18, 1);
+    font-size: medium;
+    font-weight: 500;
+    box-sizing: border-box;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.2px);
+    -webkit-backdrop-filter: blur(7.2px);
+    border: 1px solid rgba(255, 255, 255, 0.41);
+    &:hover {
+      color: rgba(197, 166, 5, 1);
+      /* From https://css.glass */
+      background: rgba(82, 41, 118, 0.21);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 3px solid rgba(247, 7, 96, 0.7);
+    }
+    &:active {
+      color:rgba(221, 114, 4, 1);
+      /* From https://css.glass */
+      background: rgba(172, 134, 18, 0.26);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6.2px);
+      -webkit-backdrop-filter: blur(6.2px);
+      border: 1px solid rgba(172, 134, 18, 0.41);
+    }
   }
 </style>
 <script>
+  //-------mouse events-----------------------
+  const focusFn = (element: HTMLDivElement) => {
+    element.classList.add("focus");
+  };
+  //----------------------------
+  const bluerFn = (element: HTMLDivElement) => {
+    element.classList.remove("focus");
+  };
+
+  //------------------------------------------------
+  //------------------------------------------------
+  const c1 = document.getElementById("c1") as HTMLDivElement;
+  c1.addEventListener("mouseover", () => {
+    focusFn(c1);
+  });
+  c1.addEventListener("mouseout", () => {
+    bluerFn(c1);
+  });
+  //------------------
+  //------------------
+  const c2 = document.getElementById("c2") as HTMLDivElement;
+  c2.addEventListener("mouseover", () => {
+    focusFn(c2);
+  });
+  c2.addEventListener("mouseout", () => {
+    bluerFn(c2);
+  });
+  //-------------------
+  //-------------------
+  const c3 = document.getElementById("c3") as HTMLDivElement;
+  c3.addEventListener("mouseover", () => {
+    focusFn(c3);
+  });
+  c3.addEventListener("mouseout", () => {
+    bluerFn(c3);
+  });
+  //------------------
+  //------------------
+  const c4 = document.getElementById("c4") as HTMLDivElement;
+  c4.addEventListener("mouseover", () => {
+    focusFn(c4);
+  });
+  c4.addEventListener("mouseout", () => {
+    bluerFn(c4);
+  });
+  //-------<---------
+  //------------------
+  const c5 = document.getElementById("c5") as HTMLDivElement;
+  c5.addEventListener("mouseover", () => {
+    focusFn(c5);
+  });
+  c5.addEventListener("mouseout", () => {
+    bluerFn(c5);
+  });
+  //-------------------------
+  //-----------------------
+  const c6 = document.getElementById("c6") as HTMLDivElement;
+  c6.addEventListener("mouseover", () => {
+    focusFn(c6);
+  });
+  c6.addEventListener("mouseout", () => {
+    bluerFn(c6);
+  });
+  //------------------------
+  //----------NAVIGATE-EVENTS w--------------
   const github = import.meta.env.PUBLIC_GITHUB_URL;
   const porfolio = import.meta.env.PUBLIC_PORFOLIO_URL;
   const nextjs = import.meta.env.PUBLIC_NEXT_JS_URL;
@@ -114,19 +225,22 @@ import nvim from "@src/assets/nvimcode.png";
   });
   //----------------------------
   const nextj1 = document.getElementById("nextjs");
-  const nextj2 = document.getElementById("nextjs2");
-  const nextj3 = document.getElementById("nextjs3");
-  const nextj4 = document.getElementById("nextjs4");
-  //----------------------------
   nextj1?.addEventListener("click", () => {
     changePage(nextjs);
   });
+  //---------------
+  const nextj2 = document.getElementById("nextjs2");
   nextj2?.addEventListener("click", () => {
     changePage(nextjs);
   });
+  //----------------
+  const nextj3 = document.getElementById("nextjs3");
   nextj3?.addEventListener("click", () => {
     changePage(nextjs);
   });
+
+  //---------------
+  const nextj4 = document.getElementById("nextjs4");
   nextj4?.addEventListener("click", () => {
     changePage(nextjs);
   });

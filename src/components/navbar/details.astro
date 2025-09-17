@@ -10,21 +10,21 @@ const { Param } = Astro.props;
 <!--home------>
 <details id="home">
   <summary id="s_home">home</summary>
-  <div id="paramhome" class="container">
+  <div id="paramhome" class="container_opt">
     <Ulist itemType={Param.home} />
   </div>
 </details>
 <!--about------>
 <details id="about">
   <summary id="s_about">about</summary>
-  <div id="paramabout" class="container">
+  <div id="paramabout" class="container_opt">
     <Ulist itemType={Param.about} />
   </div>
 </details>
 <!---contact---->
 <details id="contact">
   <summary id="s_contact">contact</summary>
-  <div id="paramcontact" class="container">
+  <div id="paramcontact" class="container_opt">
     <Ulist itemType={Param.contact} />
   </div>
 </details>
@@ -34,40 +34,48 @@ const { Param } = Astro.props;
     flex-direction: column;
     margin-top: 0.5rem;
     width: 20%;
-    padding-bottom: 0.5rem;
-    /* From https://css.glass */
-    background: rgba(38, 83, 121, 0.15);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border: 1px solid rgba(201, 61, 136, 0.3);
-    &:hover {
-      background-color: rgba(230, 185, 99, 0.2);
-    }
-    &:active{
-      background-color: rgba(246, 92, 78, 0.4) ;
-    }
+    /*padding-bottom: 0.5rem;*/
   }
   summary {
     width: 100%;
     align-self: center;
     margin-top: 0.5rem;
+    padding-top: 0.1rem;
+    height: 2rem;
     /*------ */
     color: rgba(246, 7, 133, 1);
-    &:hover{
+    /*------*/
+    box-shadow: -1px 5px 5px 0px rgba(240, 79, 175, 0.42);
+    -webkit-box-shadow: -1px 5px 5px 0px rgba(240, 79, 175, 0.42);
+    -moz-box-shadow: -1px 5px 5px 0px rgba(240, 79, 175, 0.42);
+    /*------*/
+    &:hover {
       color: rgba(224, 163, 2, 1);
     }
-    /*------ */
+    background: rgba(38, 83, 121, 0.15);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(201, 61, 136, 0.3);
+    &:hover {
+      background-color: rgba(230, 185, 99, 0.2);
+      /*------ */
+      box-shadow: -1px 5px 5px 0px rgba(223, 227, 20, 0.42);
+      -webkit-box-shadow: -1px 5px 5px 0px rgba(223, 227, 20, 0.42);
+      -moz-box-shadow: -1px 5px 5px 0px rgba(223, 227, 20, 0.42);
+    }
+    &:active {
+      background-color: rgba(246, 92, 78, 0.4);
+    }
+    /*-------*/
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-content: center;
     justify-self: center;
   }
-  .container {
+  div.container_opt {
     display: flex;
-    justify-self: end;
     position: relative;
   }
 </style>
