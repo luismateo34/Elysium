@@ -3,13 +3,12 @@ import DetailsList from "./details.astro";
 import { LogoIcon } from "./logo";
 import { type ObjectNav } from "./item.d";
 
-const dev = import.meta.env.PUBLIC_DEV;
 const path = {
-  home: dev === "true" ? "/" : "/Elysium",
-  tech: dev === "true" ? "/#technologies" : "/Elysium/#tecnologies",
-  about: dev === "true" ? "/about" : "/Elysium/about",
-  proyect: dev === "true" ? "/about/#proyect" : "/Elysium/about/#proyect",
-  contact: dev === "true" ? "/contact" : "/Elysium/contact",
+  home: "/",
+  tech: "/#technologies",
+  about: "/about",
+  proyect: "/about/#proyect",
+  contact: "/contact",
 };
 const NavObject: ObjectNav = {
   home: [

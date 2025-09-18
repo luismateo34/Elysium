@@ -7,6 +7,4 @@ import react from "@astrojs/react";
 export default defineConfig({
   vite: { plugins: [tailwindcss()] },
   integrations: [react()],
-  site: "https://luismateo34.github.io",
-  base: "/Elysium ",
 });
