@@ -4,6 +4,7 @@ interface ImportMetaEnv {
   readonly PUBLIC_GITHUB_URL: string;
   readonly PUBLIC_LINKEDIN: string;
   readonly PUBLIC_EMAIL: string;
+  readonly PUBLIC_DEV: string;
 }
 
 interface ImportMeta {
