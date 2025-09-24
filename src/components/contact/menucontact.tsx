@@ -32,7 +32,7 @@ const demoItems = [
 
 export const MenuContact = () => {
   return (
-    <div style={{ height: "600px", position: "relative" }}>
+    <div className="h-10/12 md:h-[600px] relative">
       <FlowingMenu items={demoItems} />
     </div>
   );
